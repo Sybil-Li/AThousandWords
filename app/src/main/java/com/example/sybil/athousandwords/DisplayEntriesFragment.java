@@ -15,11 +15,11 @@ import java.util.List;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment {
+public class DisplayEntriesFragment extends Fragment {
 
     private ArrayAdapter<String> displayEntriesAdapter;
 
-    public MainActivityFragment() {
+    public DisplayEntriesFragment() {
     }
 
     @Override
