@@ -32,10 +32,9 @@ public class DisplayEntriesFragment extends Fragment {
                 R.drawable.image2
         };
 
-        //TODO customize list to show both picture and text
+        //TODO improve layout in terms of font size and alignment
         CustomList adapter = new
                 CustomList(getActivity(), description, imageId);
-
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         ListView listView = (ListView) rootView.findViewById(R.id.listview_entries);
