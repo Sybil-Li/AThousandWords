@@ -1,10 +1,12 @@
 package com.example.sybil.athousandwords;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,7 +24,7 @@ public class DisplayEntriesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        String[] description = {
+        final String[] description = {
                 "xin8ji",
                 "xin9ji"
         } ;
@@ -33,13 +35,24 @@ public class DisplayEntriesFragment extends Fragment {
         };
 
         //TODO improve layout in terms of font size and alignment
-        CustomList adapter = new
+        final CustomList adapter = new
                 CustomList(getActivity(), description, imageId);
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         ListView listView = (ListView) rootView.findViewById(R.id.listview_entries);
         listView.setAdapter(adapter);
-        //list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                String entry = adapter.getItem(position);
+                Intent intent = new Intent(getActivity(), DetailActivity.class)
+                        .putExtra(Intent.EXTRA_TEXT, entry);
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }
