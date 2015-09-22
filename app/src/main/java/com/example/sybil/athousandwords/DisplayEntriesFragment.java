@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -47,7 +48,9 @@ public class DisplayEntriesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                String entry = adapter.getItem(position);
+                //String entry = adapter.getItem(position);
+                String entry = "detail view";
+                Toast.makeText(getActivity(), entry, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), DetailActivity.class)
                         .putExtra(Intent.EXTRA_TEXT, entry);
                 startActivity(intent);
