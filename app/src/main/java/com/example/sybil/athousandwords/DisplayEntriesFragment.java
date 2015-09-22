@@ -35,7 +35,6 @@ public class DisplayEntriesFragment extends Fragment {
                 R.drawable.image2
         };
 
-        //TODO improve layout in terms of font size and alignment
         final CustomList adapter = new
                 CustomList(getActivity(), description, imageId);
 

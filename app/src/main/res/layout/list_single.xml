@@ -8,18 +8,30 @@
         <ImageView
             android:id="@+id/img"
             android:scaleType="fitStart"
-            android:layout_height="100dp"
-            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:layout_width="75dp"
             android:adjustViewBounds="true"/>
 
-        <TextView
-            android:id="@+id/txt"
+        <LinearLayout
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="left"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:paddingLeft="20dp"/>
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:paddingLeft="16dp">
+
+            <TextView
+                android:id="@+id/date_and_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09/22/2015"/>
+
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
     </TableRow>
 </TableLayout>
